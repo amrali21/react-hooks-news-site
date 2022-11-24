@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "./Utilities/reportWebVitals";
 import App from "./App";
 
 ReactDOM.render(

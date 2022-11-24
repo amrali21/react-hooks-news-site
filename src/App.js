@@ -1,7 +1,7 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
-import Nav from './nav';
-import News from './news';
+import Nav from './Components/nav';
+import News from './Components/news';
 
 function App() {
     return (
