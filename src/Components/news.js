@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 export default function News(props) {
 
-  const [name1, setName1] = useState("loading..");
+  const [content, setContent] = useState("loading..");
 
   useEffect(async () => {
 
     let res = await axios.get(
-      `https://newsapi.org/v2/everything?q=${props.newsName}&apiKey=61e82deeddf74310b4d4ffb601a22949`
-    );
+      `https://newsapi.org/v2/everything`,
+      { params: { q: props.newsName, apiKey: '61e82deeddf74310b4d4ffb601a22949' } });
 
     let w = { width: "400px" };
     let arr = res.data.articles.map((p) => {
@@ -32,10 +32,10 @@ export default function News(props) {
         </div>
       );
     });
-    setName1(arr);
+    setContent(arr);
   });
 
   return (
-    <div class="p-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1">{name1} </div>
+    <div class="p-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-1">{content} </div>
   )
 }
